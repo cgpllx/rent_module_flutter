@@ -73,10 +73,12 @@ class _RentListWidgetState extends State<RentListWidget> {
       },
       itemBuilder: (context, index) {
         return InkWell(
-          splashColor: Colors.red,
-          focusColor: Colors.red,
+
+          splashColor: Colors.transparent,
+          // highlightColor: Colors.teal, //设置高亮颜色
+          // focusColor: Colors.red,
           onTap: (){},
-          child: _RentItem1(widget.list[index]),
+          child: _RentItem(widget.list[index]),
         ); //
       },
       controller: _scrollController,
@@ -97,6 +99,7 @@ class _RentListWidgetState extends State<RentListWidget> {
       selected: false,
       focusColor: Colors.red,
       hoverColor: Colors.amberAccent,
+
       selectedColor: Colors.deepPurple,
       selectedTileColor: Colors.blueAccent,
       title: Text(info.estateName ?? "data"),

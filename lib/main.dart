@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:rent_module_flutter/rent_list.dart';
+import 'package:rent_module_flutter/rent_list2.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,12 +17,12 @@ class MyApp extends StatelessWidget {
         snackBarTheme: SnackBarThemeData(
           backgroundColor: Colors.blue[500],
         ),
-        // splashColor: Colors.red
-        backgroundColor: Colors.red,
-          focusColor: Colors.red,
-        cardColor: Colors.red
+        splashColor: Colors.red,
+        hoverColor: Colors.red,
+        highlightColor: Colors.red
+
       ),
-      home: _AppBarWidget('租盤',  RentListWidget()) ,
+      home: _AppBarWidget('租盤',  RentListWidget2()) ,
     );
   }
 }

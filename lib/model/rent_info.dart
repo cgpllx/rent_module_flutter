@@ -1,11 +1,14 @@
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:intl/intl.dart';
 import 'package:rent_module_flutter/utils/textutils.dart';
 
+import '../list/iflexible.dart';
+
 part 'rent_info.g.dart';
 
 @JsonSerializable()
-class RentInfo {
+class RentInfo  {
   // int type = 0; //二手盘还是租盘
 
   String? houseResourceId;
@@ -106,7 +109,7 @@ class RentInfo {
       this.advertId,
       this.vedio,
       this.shopPath,
-      this.carportNumber); // 固定格式，不同的类使用不同的mixin即可
+      this.carportNumber)  ; // 固定格式，不同的类使用不同的mixin即可
   // 这里声明一个工厂构造方法
   factory RentInfo.fromJson(Map<String, dynamic> json) =>
       _$RentInfoFromJson(json);
@@ -192,4 +195,7 @@ class RentInfo {
       return " ";
     }
   }
+
+
+
 }
