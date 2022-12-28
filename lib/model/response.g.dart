@@ -13,10 +13,10 @@ ResultResponse _$ResultResponseFromJson(Map<String, dynamic> json) =>
       (json['data'] as List<dynamic>?)
           ?.map((e) => RentInfo.fromJson(e as Map<String, dynamic>))
           .toList(),
-      json['currentPage'] as int?,
-      json['pageSize'] as int?,
-      json['count'] as int?,
-      json['pageCount'] as int?,
+      json['currentPage']  ,
+      json['pageSize']  ,
+      json['count'] ,
+      json['pageCount']  ,
       json['token'] as String?,
       json['extra'] as String?,
     );

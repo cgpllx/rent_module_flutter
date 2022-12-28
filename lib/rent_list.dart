@@ -8,9 +8,7 @@ import 'package:rent_module_flutter/utils/textutils.dart';
 import 'model/rent_info.dart';
 import 'model/response.dart';
 
-/**
- * 二手盘列表
- */
+/// 二手盘列表
 class RentListWidget extends StatefulWidget {
   RentListWidget({Key? key}) : super(key: key);
   List<RentInfo> list = <RentInfo>[];

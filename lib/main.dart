@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
         snackBarTheme: SnackBarThemeData(
           backgroundColor: Colors.blue[500],
         ),
-        splashColor: Colors.red,
+        // splashColor: Colors.red,
         hoverColor: Colors.red,
-        highlightColor: Colors.red
+        // highlightColor: Colors.red
 
       ),
       home: _AppBarWidget('租盤',  RentListWidget2()) ,

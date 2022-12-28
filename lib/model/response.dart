@@ -1,17 +1,20 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:rent_module_flutter/list/easy_response.dart';
 import 'package:rent_module_flutter/model/rent_info.dart';
 
 part 'response.g.dart';
 
 @JsonSerializable()
-class ResultResponse {
-  String? code;
+class ResultResponse extends EasyResponse<List<RentInfo>>{
+  String code;
   String? msg;
   List<RentInfo>? data;
-  int? currentPage;
-  int? pageSize;
-  int? count;
-  int? pageCount;
+  int  currentPage;
+  int  pageSize;
+  @override
+  int  count;
+  @override
+  int  pageCount;
   String? token;
   String? extra;
 

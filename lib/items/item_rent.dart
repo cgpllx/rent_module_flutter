@@ -1,29 +1,25 @@
-
-
 import 'package:flutter/material.dart';
-
-
+import '../list/easylist_controller.dart';
 import '../list/iflexible.dart';
-import '../list/multi_select_container.dart';
 import '../model/rent_info.dart';
 import '../utils/textutils.dart';
 
 class Item_Rent   implements IFlexible<RentInfo>   {
   RentInfo rentInfo;
-  Item_Rent(this.rentInfo, this.selected);
+  Item_Rent(this.rentInfo );
   @override
-  Widget buildWidget(BuildContext context, int index,MultiSelectContainer multiSelectContainer) {
+  Widget buildWidget(BuildContext context, int index,EasyListController easyListController) {
 
     print("context.widget=${context.widget}");
-
-    return _RentItem(rentInfo);
+    return _RentItem(rentInfo, easyListController.isSelected(index));
   }
 
-  Widget _RentItem(RentInfo info) {
+  Widget _RentItem(RentInfo info,bool selected) {
     return Container(
-        margin: const EdgeInsets.fromLTRB(0, 1, 0, 0),
+        margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
         height: 155,
-         // color: selected?Colors.red:Colors.blue,
+
+          color: !selected?Colors.transparent:Colors.grey[300],
         alignment: Alignment.centerLeft,
         width: double.maxFinite,
         child: Row(children: [
@@ -34,7 +30,7 @@ class Item_Rent   implements IFlexible<RentInfo>   {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: const Color.fromARGB(0xff, 0x88, 0x59, 0x98),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(4),
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4),
@@ -171,9 +167,10 @@ class Item_Rent   implements IFlexible<RentInfo>   {
           color: Color(0x297F69E7), borderRadius: BorderRadius.circular(2)),
       margin: const EdgeInsets.fromLTRB(0, 0, 3, 0),
       padding: const EdgeInsets.fromLTRB(3, 3, 3, 3),
+      alignment: Alignment.center,
       child: Text(
         singleTag,
-        strutStyle: StrutStyle(
+        strutStyle:   const StrutStyle(
           fontSize: 12,
           leading: 0,
           height: 1.0,
@@ -188,11 +185,8 @@ class Item_Rent   implements IFlexible<RentInfo>   {
         ),
         textAlign: TextAlign.center,
       ),
-      alignment: Alignment.center,
     );
   }
-  @override
-  late bool selected =false;
 
   @override
   bool get enabled => true;
@@ -201,7 +195,7 @@ class Item_Rent   implements IFlexible<RentInfo>   {
   bool get hidden => false;
 
   @override
-  Color get hoverColor => Colors.red;
+  Color get hoverColor => Colors.grey;
 
   @override
   bool get selectable => true;
@@ -210,7 +204,7 @@ class Item_Rent   implements IFlexible<RentInfo>   {
   RentInfo get value => rentInfo;
 
   @override
-  bool onClick(BuildContext context, int index,MultiSelectContainer multiSelectContainer) {
+  bool onClick(BuildContext context, int index,EasyListController easyListController) {
 
     return false;
   }
